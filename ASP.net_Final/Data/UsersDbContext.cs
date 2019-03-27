@@ -10,9 +10,13 @@ namespace ASP.net_Final.Data
 {
     public class UsersDbContext : IdentityDbContext<UsersAuthen>
     {
+        
+
         public UsersDbContext(DbContextOptions<UsersDbContext> options) : base(options)
         {
         }
+
+        public DbSet<ToDo> Todo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

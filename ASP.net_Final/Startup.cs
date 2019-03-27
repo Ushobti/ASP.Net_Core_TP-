@@ -43,7 +43,7 @@ namespace ASP.net_Final
                 options.Password.RequireNonAlphanumeric = true;
 
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2);
-                options.Lockout.MaxFailedAccessAttempts = 4;
+                options.Lockout.MaxFailedAccessAttempts = 3;
             });
 
 
