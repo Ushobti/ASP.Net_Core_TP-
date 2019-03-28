@@ -28,9 +28,7 @@ namespace ASP.net_Final.Controllers
         {
             UsersAuthen user = await GetCurrentUserAsync();
 
-            var test = this._context.Todo.
-
-            return View( await _context.Todo.ToListAsync());
+            return View( await _context.Todo.Where(t => t.User ==  user).ToListAsync());
         }
 
         [HttpGet]
@@ -47,6 +45,56 @@ namespace ASP.net_Final.Controllers
             }
 
             return View(Task);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var Task = await _context.Todo.FindAsync(id);
+
+            if (Task == null)
+            {
+                return NotFound();
+            }
+
+            return View(Task);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int ID,[Bind("ID, TaskName, Description, ReleaseDate, EndDate")] ToDo Task)
+        {
+
+            if (ID != Task.ID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(Task);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!MovieExists(Task.ID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+           return View(Task);
         }
 
         [HttpGet]
@@ -69,6 +117,11 @@ namespace ASP.net_Final.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(Task);
+        }
+
+        private bool MovieExists(int id)
+        {
+            return _context.Todo.Any(e => e.ID == id);
         }
     }
 }

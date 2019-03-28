@@ -39,7 +39,9 @@ namespace ASP.net_Final.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new UsersAuthen { UserName = model.Email, Email = model.Email };
+                var user = new UsersAuthen
+                {
+                    UserName = model.Email, Email = model.Email, Nom = model.Nom, Prenom = model.Prenom};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

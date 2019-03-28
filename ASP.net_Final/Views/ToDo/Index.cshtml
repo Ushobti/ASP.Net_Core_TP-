@@ -6,20 +6,20 @@
 <h2>@ViewData["Title"]</h2>
 
 <p>
-    <a asp-action="Create">Create New Task</a>
+    <a asp-action="Create" class="btn btn-default">Créer nouvelle Tâche</a>
 </p>
 
-@foreach (var item in Model)
-{
-    <table class="table">
-        <tr>
-            <td>Nom de la tâche : @(item.TaskName)</td>
-        </tr>
-        <tr>
-            <td>Nom de la tâche : @(item.ReleaseDate)</td>
-        </tr>
-        <tr>
-            <td>Nom de la tâche : @(item.EndDate)</td>
-        </tr>
-    </table>
-}
+<div class="row">
+        @foreach (var item in Model)
+         {
+               <div class="col-md-4">
+                <h4>@(item.TaskName)</h4>
+                <div> @(item.Description)</div>
+                <div>
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a>
+
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                </div>
+                </div>
+        }
+</div>

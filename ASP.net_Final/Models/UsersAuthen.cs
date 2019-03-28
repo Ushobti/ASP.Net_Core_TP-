@@ -8,6 +8,8 @@ namespace ASP.net_Final.Models
 {
     public class UsersAuthen : IdentityUser
     {
+        public string Nom { get; set; }
 
+        public string Prenom { get; set; }
     }
 }

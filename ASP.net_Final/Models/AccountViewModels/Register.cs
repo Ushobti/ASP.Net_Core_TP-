@@ -12,6 +12,14 @@ namespace ASP.net_Final.Models.AccountViewModels
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set;}
+        
+        [DataType(DataType.Text)]
+        [Display(Name = "Nom")]
+        public string Nom { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Prénom")]
+        public string Prenom { get; set; }
 
         [Required]
         [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
