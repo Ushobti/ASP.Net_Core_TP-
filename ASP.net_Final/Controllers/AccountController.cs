@@ -115,7 +115,7 @@ namespace ASP.net_Final.Controllers
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
-
+      
         public AccountController(UserManager<UsersAuthen> userManager, SignInManager<UsersAuthen> signInManager,
             ILogger<AccountController> logger)
         {

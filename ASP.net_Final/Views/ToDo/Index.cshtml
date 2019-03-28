@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ToDo>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create">Create New Task</a>
+</p>
+
+@foreach (var item in Model)
+{
+    <table class="table">
+        <tr>
+            <td>Nom de la tâche : @(item.TaskName)</td>
+        </tr>
+        <tr>
+            <td>Nom de la tâche : @(item.ReleaseDate)</td>
+        </tr>
+        <tr>
+            <td>Nom de la tâche : @(item.EndDate)</td>
+        </tr>
+    </table>
+}

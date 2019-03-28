@@ -20,5 +20,7 @@ namespace ASP.net_Final.Models
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
 
+        public UsersAuthen User { get; set; }
+
     }
 }
