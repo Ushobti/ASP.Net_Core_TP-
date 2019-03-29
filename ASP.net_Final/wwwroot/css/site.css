@@ -35,3 +35,11 @@ body {
         display: none;
     }
 }
+
+.ToDoListItem {
+    border: black 2px solid;
+    border-radius: 15px;
+    padding: 1%;
+    margin: 1%;
+    width: 22%;
+}

@@ -12,14 +12,16 @@
 <div class="row">
         @foreach (var item in Model)
          {
-               <div class="col-md-4">
+            <div class="col-md-4 ToDoListItem">
                 <h4>@(item.TaskName)</h4>
                 <div> @(item.Description)</div>
-                <div>
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a>
-
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                </div>
-                </div>
+                <br />
+                    <div>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-default">Details</a>
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-default">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-default">Supprimer</a>
+                    </div>
+            </div>
         }
 </div>
+

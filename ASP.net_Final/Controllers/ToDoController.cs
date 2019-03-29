@@ -119,6 +119,33 @@ namespace ASP.net_Final.Controllers
             return View(Task);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+
+            if (id == null)
+                return NotFound();
+
+            var Task = await _context.Todo.FirstOrDefaultAsync(m => m.ID == id);
+
+            if (Task == null)
+            {
+                return NotFound();
+            }
+
+            return View();
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            ToDo Task = await _context.Todo.FindAsync(id);
+            _context.Todo.Remove(Task);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         private bool MovieExists(int id)
         {
             return _context.Todo.Any(e => e.ID == id);
