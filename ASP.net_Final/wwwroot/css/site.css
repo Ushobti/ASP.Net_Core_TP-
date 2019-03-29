@@ -43,3 +43,27 @@ body {
     margin: 1%;
     width: 22%;
 }
+
+.delete {
+    position: absolute;
+    text-decoration: none;
+    border-bottom-left-radius: 15px;
+    text-align: center;
+    vertical-align: center;
+    color: black;
+    font-weight: bold;
+    width: 15%;
+    height: 20%;
+    border-bottom: black 2px solid;
+    border-left: black 2px solid;
+    top: 0%;
+    right: 0%;
+    padding: 0;
+}
+
+.delete:hover {
+    text-decoration: none;
+    border-top-right-radius: 13px;
+    color: white;
+    background-color: red;
+}

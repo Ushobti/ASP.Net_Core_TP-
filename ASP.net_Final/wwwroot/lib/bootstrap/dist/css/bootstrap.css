@@ -3317,20 +3317,20 @@ fieldset[disabled] .btn-success.focus {
   background-color: #fff;
 }
 .btn-info {
-  color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+    color: #000000;
+    background-color: #F8F8F8;
+    border-color: #F0F0F0;
 }
 .btn-info:focus,
 .btn-info.focus {
   color: #fff;
-  background-color: #31b0d5;
-  border-color: #1b6d85;
+  background-color: #F8F8F8;
+  border-color: #F0F0F0;
 }
 .btn-info:hover {
-  color: #fff;
-  background-color: #31b0d5;
-  border-color: #269abc;
+    color: #000000;
+    background-color: #D8D8D8;
+    border-color: #C0C0C0;
 }
 .btn-info:active,
 .btn-info.active,

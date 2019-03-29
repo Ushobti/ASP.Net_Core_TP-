@@ -10,25 +10,25 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TaskName)
+            <label asp-for="TaskName" class="control-label">Nom de la tâche </label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TaskName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            <label asp-for="Description" class="control-label">Description</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
+            <label asp-for="ReleaseDate" class="control-label">Date de début </label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ReleaseDate)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
+            <label asp-for="EndDate" class="control-label">Date de fin</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.EndDate)
